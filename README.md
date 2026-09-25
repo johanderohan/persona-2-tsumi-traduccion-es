@@ -11,13 +11,15 @@ japonesa para aplicarlo.
 
 ## Estado
 
-Última versión: **[v1.0](../../releases/tag/v1.0)**.
+Última versión: **[v1.1](../../releases/tag/v1.1)**.
 
 | Parte | Estado |
 |---|---|
 | Guion de eventos | 9.339 mensajes traducidos |
 | Diálogos de los personajes de los mapas de la ciudad | 947 mensajes traducidos |
 | Contacto con demonios | 6.258 textos traducidos |
+| Presentaciones de las Personas (Velvet Room) | 150 textos traducidos |
+| Cofres de las mazmorras | Traducidos |
 | Menús, objetos, demonios, habilidades, avisos y tarjeta de memoria | Traducidos |
 | Pantalla de nombre | Teclado en castellano con tildes, ñ y ¡¿ |
 | Mapas de la ciudad y mapa automático | Traducidos |
@@ -53,6 +55,11 @@ instituto Seven Sisters. Se han comprobado:
 El parche se ha aplicado sobre el BIN japonés original y el resultado se ha comparado byte a
 byte con la imagen probada.
 
+En la v1.1 se ha revisado todo el texto: se han traducido textos que faltaban, se han
+corregido erratas y se ha unificado la terminología con la de *Persona 2: Batsu*. Las
+presentaciones de las Personas, los cofres y los diálogos añadidos se han comprobado en los
+datos del disco, pero todavía no dentro de una partida.
+
 **No se ha jugado una partida completa de principio a fin** ni se ha probado en consola
 real. Los distritos de Yumezaki, Aoba, Konan y el monte Katatsumuri, los jefes y el resto de
 la historia no se han recorrido en las pruebas. La traducción y su revisión se han hecho con
@@ -65,6 +72,21 @@ Limitaciones conocidas:
   nombres más largos, como «Tatsuya», el nombre y el apodo se solapan.
 - Los estados alterados se muestran con abreviaturas de tres letras (MUE, VEN, DOR, CON…)
   sobre el nombre del personaje, en el mismo sitio que los kanji originales.
+- En la placa de nombre de «Tatsuya» se ve una raya oscura de 1 píxel junto a la T.
+
+## Cambios
+
+- **v1.1** (25-09-2026):
+  - Se traducen textos que se habían quedado en japonés: las 150 presentaciones de las
+    Personas en la Velvet Room, los mensajes de los cofres de las mazmorras, dos avisos del
+    contacto y 51 diálogos de la historia que no llegaban a insertarse.
+  - El número de ranura o de archivo en los mensajes de la tarjeta de memoria ya no se
+    superpone al texto.
+  - La terminología es la misma que en la traducción de *Persona 2: Batsu*.
+  - Las armas legendarias y otros objetos se llaman igual en el inventario, las tiendas y
+    los diálogos.
+  - Más de mil correcciones de erratas, ortotipografía y coherencia.
+- **v1.0** (25-09-2026): primera versión.
 
 ## Cómo aplicar el parche
 
@@ -89,7 +111,7 @@ Limitaciones conocidas:
 4. Aplica el parche con una de estas herramientas:
    - **Windows**: [Delta Patcher](https://github.com/marco-calautti/DeltaPatcher/releases)
    - **Linux / macOS**: `xdelta3 -d -s "original.bin" parche.xdelta "Persona 2 - Tsumi (ES).bin"`
-5. Comprueba que el BIN resultante tiene el MD5 **`305c8a014bd66c7ba7292ec3fa8e4fd6`** (v1.0).
+5. Comprueba que el BIN resultante tiene el MD5 **`36bf6f368e2ea11cf91a2931c5ba4dbc`** (v1.1).
 6. Crea un CUE para el nuevo BIN, por ejemplo `Persona 2 - Tsumi (ES).cue`:
 
    ```
