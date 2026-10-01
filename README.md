@@ -11,7 +11,8 @@ japonesa para aplicarlo.
 
 ## Estado
 
-Última versión: **[v1.1](../../releases/tag/v1.1)**.
+Última versión: **[v1.2](../../releases/tag/v1.2)**. Corrige un cuelgue de la v1.1 y la v1.0 al
+entrar en algunos lugares (ver «Cambios»).
 
 | Parte | Estado |
 |---|---|
@@ -55,6 +56,10 @@ instituto Seven Sisters. Se han comprobado:
 El parche se ha aplicado sobre el BIN japonés original y el resultado se ha comparado byte a
 byte con la imagen probada.
 
+La corrección del cuelgue de la v1.2 se ha comprobado midiendo los guiones de todos los mapas
+frente al espacio que tienen en memoria, pero no se ha podido entrar en partida en esos
+lugares concretos, porque salen avanzada la historia.
+
 En la v1.1 se ha revisado todo el texto: se han traducido textos que faltaban, se han
 corregido erratas y se ha unificado la terminología con la de *Persona 2: Batsu*. Las
 presentaciones de las Personas, los cofres y los diálogos añadidos se han comprobado en los
@@ -76,6 +81,17 @@ Limitaciones conocidas:
 
 ## Cambios
 
+- **v1.2** (01-10-2026):
+  - Corregido un cuelgue al entrar en algunos lugares, como la fábrica abandonada, la Velvet
+    Room, el restaurante de sushi o los locales de los rumoreros. Seis guiones de evento
+    traducidos eran más grandes que el espacio que el juego reserva para ellos en memoria y
+    pisaban los datos del mapa. Ahora caben todos: su texto se guarda de forma más compacta y
+    algunos diálogos de esos lugares se han condensado sin perder información.
+  - Cada versión se comprueba ahora automáticamente contra todos los límites de memoria
+    conocidos del juego antes de publicarse.
+  - Si vienes de una versión anterior, puedes seguir con tu partida de la tarjeta de memoria.
+    Los estados guardados del emulador (savestates) de versiones anteriores no sirven: carga
+    la partida desde la tarjeta.
 - **v1.1** (25-09-2026):
   - Se traducen textos que se habían quedado en japonés: las 150 presentaciones de las
     Personas en la Velvet Room, los mensajes de los cofres de las mazmorras, dos avisos del
@@ -111,7 +127,7 @@ Limitaciones conocidas:
 4. Aplica el parche con una de estas herramientas:
    - **Windows**: [Delta Patcher](https://github.com/marco-calautti/DeltaPatcher/releases)
    - **Linux / macOS**: `xdelta3 -d -s "original.bin" parche.xdelta "Persona 2 - Tsumi (ES).bin"`
-5. Comprueba que el BIN resultante tiene el MD5 **`36bf6f368e2ea11cf91a2931c5ba4dbc`** (v1.1).
+5. Comprueba que el BIN resultante tiene el MD5 **`e46e803232cd892b98215a6192f47eeb`** (v1.2).
 6. Crea un CUE para el nuevo BIN, por ejemplo `Persona 2 - Tsumi (ES).cue`:
 
    ```
