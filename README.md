@@ -11,8 +11,9 @@ japonesa para aplicarlo.
 
 ## Estado
 
-Última versión: **[v1.2](../../releases/tag/v1.2)**. Corrige un cuelgue de la v1.1 y la v1.0 al
-entrar en algunos lugares (ver «Cambios»).
+Última versión: **[v1.3](../../releases/tag/v1.3)**. Corrige las escenas de los combates
+importantes (despertar de las Personas, Joker, jefes), que en versiones anteriores se saltaban o
+podían colgar el juego (ver «Cambios»).
 
 | Parte | Estado |
 |---|---|
@@ -56,6 +57,11 @@ instituto Seven Sisters. Se han comprobado:
 El parche se ha aplicado sobre el BIN japonés original y el resultado se ha comparado byte a
 byte con la imagen probada.
 
+En la v1.3 se ha comprobado en partida, desde una partida nueva, que el despertar de las
+Personas y el combate contra Joker en el instituto salen completos y en castellano; con la
+v1.2 ambas escenas se saltaban. Las demás escenas de combate (mazmorra del instituto y jefes
+posteriores) se han comprobado en los datos del disco, no en partida.
+
 La corrección del cuelgue de la v1.2 se ha comprobado midiendo los guiones de todos los mapas
 frente al espacio que tienen en memoria, pero no se ha podido entrar en partida en esos
 lugares concretos, porque salen avanzada la historia.
@@ -81,6 +87,16 @@ Limitaciones conocidas:
 
 ## Cambios
 
+- **v1.3** (06-10-2026):
+  - Corregidas las escenas de los combates importantes: el despertar de las Personas, el
+    combate contra Joker y las escenas con diálogo de los jefes. Desde la v1.0, sus 54 guiones
+    se guardaban con una compresión distinta de la que el juego espera, así que el juego leía
+    datos sin sentido: la escena se saltaba o el juego podía colgarse (por ejemplo, en el
+    instituto Seven Sisters al principio de la partida).
+  - La comprobación automática de cada versión lee ahora la imagen igual que el juego y
+    verifica también el espacio en memoria de estas escenas.
+  - Puedes seguir con tu partida de la tarjeta de memoria; los estados guardados del
+    emulador (savestates) de versiones anteriores no sirven.
 - **v1.2** (01-10-2026):
   - Corregido un cuelgue al entrar en algunos lugares, como la fábrica abandonada, la Velvet
     Room, el restaurante de sushi o los locales de los rumoreros. Seis guiones de evento
@@ -127,7 +143,7 @@ Limitaciones conocidas:
 4. Aplica el parche con una de estas herramientas:
    - **Windows**: [Delta Patcher](https://github.com/marco-calautti/DeltaPatcher/releases)
    - **Linux / macOS**: `xdelta3 -d -s "original.bin" parche.xdelta "Persona 2 - Tsumi (ES).bin"`
-5. Comprueba que el BIN resultante tiene el MD5 **`e46e803232cd892b98215a6192f47eeb`** (v1.2).
+5. Comprueba que el BIN resultante tiene el MD5 **`4220f7c4f1c6ca3a461b277ba71768cc`** (v1.3).
 6. Crea un CUE para el nuevo BIN, por ejemplo `Persona 2 - Tsumi (ES).cue`:
 
    ```
