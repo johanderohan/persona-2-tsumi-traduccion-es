@@ -2,6 +2,8 @@
 
 [![Invítame a un café en Ko-fi](https://ko-fi.com/img/githubbutton_sm.svg)](https://ko-fi.com/johanderohan)
 
+Ficha del proyecto, capturas y más traducciones al castellano en **[Parches en Castellano](https://parchesencastellano.com/traducciones/playstation/persona-2-tsumi)**.
+
 Traducción al **español de España** de *Persona 2: Tsumi* (ペルソナ2 罪, PlayStation, 1999),
 el RPG de Atlus que en Occidente se conoce como *Innocent Sin* y cuya versión de PlayStation
 nunca salió de Japón.
