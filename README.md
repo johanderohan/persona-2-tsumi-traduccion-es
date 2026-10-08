@@ -13,9 +13,9 @@ japonesa para aplicarlo.
 
 ## Estado
 
-Última versión: **[v1.3](../../releases/tag/v1.3)**. Corrige las escenas de los combates
-importantes (despertar de las Personas, Joker, jefes), que en versiones anteriores se saltaban o
-podían colgar el juego (ver «Cambios»).
+Última versión: **[v1.4](../../releases/tag/v1.4)**. Corrige el cuelgue en el instituto al
+hablar con los alumnos o intentar abrir aulas cerradas, y otros fallos de carga de datos que
+venían de versiones anteriores (ver «Cambios»).
 
 | Parte | Estado |
 |---|---|
@@ -59,6 +59,14 @@ instituto Seven Sisters. Se han comprobado:
 El parche se ha aplicado sobre el BIN japonés original y el resultado se ha comparado byte a
 byte con la imagen probada.
 
+En la v1.4 se ha reproducido en emulador el cuelgue del instituto y se ha comprobado la
+corrección: los 160 diálogos de alumnos, puertas y tiendas que usa el módulo de las mazmorras
+cargan sin bloquearse, y la puerta cerrada muestra «Está cerrado con llave.». Además, se han
+revisado todas las lecturas de datos que hace el juego (250 llamadas en el ejecutable y sus
+módulos) frente a los archivos que cambia la traducción, y una comprobación automática vigila
+todas las tablas y límites conocidos. Las correcciones de dos mapas automáticos de zonas
+avanzadas se han comprobado simulando el código del juego, no en partida.
+
 En la v1.3 se ha comprobado en partida, desde una partida nueva, que el despertar de las
 Personas y el combate contra Joker en el instituto salen completos y en castellano; con la
 v1.2 ambas escenas se saltaban. Las demás escenas de combate (mazmorra del instituto y jefes
@@ -89,6 +97,16 @@ Limitaciones conocidas:
 
 ## Cambios
 
+- **v1.4** (08-10-2026):
+  - Corregido el cuelgue en el instituto Seven Sisters al hablar con los alumnos (por ejemplo,
+    los que ayudan a encontrar a la profesora Saeko) o al intentar abrir un aula cerrada. El
+    juego localiza esos diálogos con una tabla interna que la traducción no actualizaba desde
+    la v1.0. Afecta también a diálogos de otras mazmorras y algunas tiendas.
+  - Corregidos otros fallos de carga que venían de versiones anteriores: un diálogo de la
+    tienda de CD que no cabía en memoria, datos que quedaban partidos entre dos sectores del
+    disco y la lectura de dos mapas automáticos.
+  - Puedes seguir con tu partida de la tarjeta de memoria; los estados guardados del
+    emulador (savestates) de versiones anteriores no sirven.
 - **v1.3** (06-10-2026):
   - Corregidas las escenas de los combates importantes: el despertar de las Personas, el
     combate contra Joker y las escenas con diálogo de los jefes. Desde la v1.0, sus 54 guiones
@@ -145,7 +163,7 @@ Limitaciones conocidas:
 4. Aplica el parche con una de estas herramientas:
    - **Windows**: [Delta Patcher](https://github.com/marco-calautti/DeltaPatcher/releases)
    - **Linux / macOS**: `xdelta3 -d -s "original.bin" parche.xdelta "Persona 2 - Tsumi (ES).bin"`
-5. Comprueba que el BIN resultante tiene el MD5 **`4220f7c4f1c6ca3a461b277ba71768cc`** (v1.3).
+5. Comprueba que el BIN resultante tiene el MD5 **`bccf0756d2059d91bf906b75234b827b`** (v1.4).
 6. Crea un CUE para el nuevo BIN, por ejemplo `Persona 2 - Tsumi (ES).cue`:
 
    ```
