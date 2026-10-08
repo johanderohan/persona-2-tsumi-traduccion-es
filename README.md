@@ -13,9 +13,10 @@ japonesa para aplicarlo.
 
 ## Estado
 
-Última versión: **[v1.4](../../releases/tag/v1.4)**. Corrige el cuelgue en el instituto al
-hablar con los alumnos o intentar abrir aulas cerradas, y otros fallos de carga de datos que
-venían de versiones anteriores (ver «Cambios»).
+Última versión: **[v1.5](../../releases/tag/v1.5)**. Corrige los cuelgues al hablar con los
+alumnos del instituto que llevan a la profesora Saeko y al escribir nombres de 8 letras, y
+revisa todos los diálogos del juego para que ninguno agote la memoria de dibujo de texto (ver
+«Cambios»).
 
 | Parte | Estado |
 |---|---|
@@ -59,6 +60,14 @@ instituto Seven Sisters. Se han comprobado:
 El parche se ha aplicado sobre el BIN japonés original y el resultado se ha comparado byte a
 byte con la imagen probada.
 
+En la v1.5 se han reproducido en emulador los cuelgues de los tres alumnos del instituto y de
+los nombres de 8 letras, y se ha comprobado su corrección jugando: las tres conversaciones
+terminan, se puede guardar y cargar después, y se aceptan apellido, nombre y apodo de 8 letras.
+Además, todos los diálogos del juego (escenas, combate, contacto con demonios, distritos,
+mazmorras, cofres, presentaciones y rumores) se han ejecutado con el código original del juego para comprobar que ninguno agota la
+memoria de dibujo de texto en su contexto. Es una comprobación automática: no sustituye a una
+partida completa, y algunos contextos se han probado con una interfaz simultánea supuesta.
+
 En la v1.4 se ha reproducido en emulador el cuelgue del instituto y se ha comprobado la
 corrección: los 160 diálogos de alumnos, puertas y tiendas que usa el módulo de las mazmorras
 cargan sin bloquearse, y la puerta cerrada muestra «Está cerrado con llave.». Además, se han
@@ -97,6 +106,21 @@ Limitaciones conocidas:
 
 ## Cambios
 
+- **v1.5** (08-10-2026):
+  - Corregido el cuelgue al hablar con los alumnos del instituto que llevan a la profesora Saeko
+    (plantas 1F, 2F y 3F): algunas páginas tenían más letras de las que el juego puede dibujar a
+    la vez. Ahora esos diálogos se reparten en más páginas, sin perder texto.
+  - Corregidos dos cuelgues de la pantalla de nombres con 8 letras: al confirmar un apellido,
+    nombre o apodo de 8 letras, y al escribir la octava letra del apodo con el apellido y el
+    nombre también llenos.
+  - Revisados con el código original del juego todos los diálogos para que ninguno agote la
+    memoria de dibujo de texto; corregidos otros dos diálogos de las mazmorras (unas opciones
+    junto a una flor y una circular en el suelo de un pasillo) que podían colgarse al cambiar de
+    página.
+  - Corregidas tres líneas del contacto con demonios que se salían de la ventana y el nombre de
+    la Sombra del protagonista en el contacto, que perdía la palabra «Sombra».
+  - Puedes seguir con tu partida de la tarjeta de memoria; los estados guardados del
+    emulador (savestates) de versiones anteriores no sirven.
 - **v1.4** (08-10-2026):
   - Corregido el cuelgue en el instituto Seven Sisters al hablar con los alumnos (por ejemplo,
     los que ayudan a encontrar a la profesora Saeko) o al intentar abrir un aula cerrada. El
@@ -163,7 +187,7 @@ Limitaciones conocidas:
 4. Aplica el parche con una de estas herramientas:
    - **Windows**: [Delta Patcher](https://github.com/marco-calautti/DeltaPatcher/releases)
    - **Linux / macOS**: `xdelta3 -d -s "original.bin" parche.xdelta "Persona 2 - Tsumi (ES).bin"`
-5. Comprueba que el BIN resultante tiene el MD5 **`bccf0756d2059d91bf906b75234b827b`** (v1.4).
+5. Comprueba que el BIN resultante tiene el MD5 **`26abe7bdac2844e7d2ac585fb0055d3f`** (v1.5).
 6. Crea un CUE para el nuevo BIN, por ejemplo `Persona 2 - Tsumi (ES).cue`:
 
    ```
